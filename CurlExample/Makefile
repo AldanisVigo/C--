@@ -1,3 +1,6 @@
+#Author:  Aldanis Vigo 
+#Datetime: Tuesday, May 24th, 2016 @ 1:07PM
+#Licence: Use at your own will
 CC = g++
 PROG = main
 OBJS = curly.o

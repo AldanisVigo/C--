@@ -1,3 +1,6 @@
+//This is not my code. I got this from:
+//http://dahu.co.uk/blog/?p=77
+
 #ifndef curly_h
 #define curly_h
 
@@ -9,6 +12,7 @@ class Curly{
 private:
     std::string        		mContent;
     std::string        		mType;
+    //Fixed from original code added argument std::string within vector object declaration angled brackets.
     std::vector<std::string>    mHeaders;
     unsigned int       		mHttpStatus;
     CURL*              		pCurlHandle;
