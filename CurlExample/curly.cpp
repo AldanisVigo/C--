@@ -1,5 +1,6 @@
 //This is not my code. I got this from:
 //http://dahu.co.uk/blog/?p=77
+//This example was borrowed bros!
 #include "curly.h"
 
 CURLcode Curly::Fetch(std::string url){
