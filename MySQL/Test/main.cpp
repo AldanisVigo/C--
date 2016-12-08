@@ -14,7 +14,7 @@ int main(void){
 	sql::ResultSet *res;
 
  	driver = get_driver_instance();
-  	con = driver->connect("tcp://127.0.0.1:3306","root","ilovejenn2");
+  	con = driver->connect("tcp://127.0.0.1:3306","root","pass");
 	
 	stmt = con->createStatement();
 	stmt->execute("USE test");
