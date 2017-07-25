@@ -27,6 +27,8 @@ run_menu_example: menu.exe
 run_textview_example: textview.exe
 	./textview.exe
 
+clean_all:
+	rm menu.exe textview.exe menu.o textview.o
 run_all: menu.exe textview.exe
 	./menu.exe;./textview.exe
 	
