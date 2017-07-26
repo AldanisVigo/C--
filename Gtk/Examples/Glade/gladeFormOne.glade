@@ -5,12 +5,12 @@
   <object class="GtkAboutDialog" id="aboutdialog1">
     <property name="can_focus">False</property>
     <property name="type_hint">dialog</property>
-    <property name="program_name">Glade</property>
-    <property name="logo_icon_name">image-missing</property>
+    <property name="program_name">Danny's GTK+ Text Editor</property>
+    <property name="version">1.0 © 2017</property>
+    <property name="logo">text-editor-icon.png</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutdialog-vbox1">
         <property name="can_focus">False</property>
-        <property name="margin_top">27</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
@@ -26,6 +26,78 @@
         </child>
         <child>
           <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkFileChooserDialog" id="filechooserdialog1">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="filechooserdialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="filechooserdialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="btn_cancel">
+                <property name="label" translatable="yes">Get Me Outta Heaaa</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="close_open_file_dialog" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_open">
+                <property name="label" translatable="yes">Open Sesame</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="open_file_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">America's the best country in the world! </property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
         </child>
       </object>
     </child>
@@ -167,26 +239,32 @@
           </packing>
         </child>
         <child>
-          <object class="GtkTextView" id="editor_area">
-            <property name="width_request">400</property>
-            <property name="height_request">200</property>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
             <property name="visible">True</property>
-            <property name="app_paintable">True</property>
             <property name="can_focus">True</property>
-            <property name="has_focus">True</property>
-            <property name="is_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="hexpand">True</property>
-            <property name="vexpand">True</property>
-            <property name="wrap_mode">word</property>
-            <property name="left_margin">7</property>
-            <property name="right_margin">7</property>
-            <property name="top_margin">7</property>
-            <property name="bottom_margin">7</property>
-            <property name="indent">4</property>
-            <property name="buffer">textbuffer2</property>
-            <property name="overwrite">True</property>
-            <property name="monospace">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkTextView" id="editor_area">
+                <property name="width_request">400</property>
+                <property name="height_request">200</property>
+                <property name="visible">True</property>
+                <property name="app_paintable">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="vadjustment">adjustment2</property>
+                <property name="wrap_mode">word</property>
+                <property name="left_margin">2</property>
+                <property name="right_margin">7</property>
+                <property name="top_margin">7</property>
+                <property name="bottom_margin">7</property>
+                <property name="indent">4</property>
+                <property name="buffer">textbuffer2</property>
+                <property name="overwrite">True</property>
+                <property name="monospace">True</property>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">True</property>
