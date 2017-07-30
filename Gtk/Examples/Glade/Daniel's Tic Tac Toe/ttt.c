@@ -1,6 +1,6 @@
 /*
- * 	@author:{developer}
- *  @date:{date}
+ * 	@author: Aldanis Vigo
+ *  @date: July 29th 2017
 	Description: Daniel's Dinosaur Tic Tac Toe game.
 */
 
