@@ -109,8 +109,7 @@ void save_as_save(GtkWidget *widget, gpointer *pointer){
 	gtk_text_buffer_get_end_iter (textview_buffer, &end);
 	gchar *save_text = gtk_text_buffer_get_text (textview_buffer, &start, &end, FALSE);       
 	gtk_text_buffer_set_modified (textview_buffer, FALSE);
-	gtk_widget_set_sensitive (textview,
-	 TRUE);
+	gtk_widget_set_sensitive (textview, TRUE);
 	//Save the file
 	FILE *f = fopen(filename, "ab");
     if(f){
@@ -120,8 +119,6 @@ void save_as_save(GtkWidget *widget, gpointer *pointer){
     }else{
 		sendMessage("Error saving the file.", window);
 	}
-	gtk_grab_remove(GTK_WIDGET(save_as_dialog));
-	gtk_widget_destroy(GTK_WIDGET(save_as_dialog));
     g_free(filename);
 }
 //Save As Button Signal Callback
@@ -223,3 +220,6 @@ int main(int argc, char **argv){
 	gtk_main();  
 	return 0;
 }
+
+changed new version
+This is some example text here.

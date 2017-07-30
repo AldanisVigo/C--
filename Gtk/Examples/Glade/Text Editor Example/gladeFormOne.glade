@@ -40,7 +40,7 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkFileChooserDialog" id="filechooserdialog1">
+  <object class="GtkFileChooserDialog" id="open_dialog">
     <property name="can_focus">False</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
@@ -102,6 +102,73 @@
       </object>
     </child>
   </object>
+  <object class="GtkFileChooserDialog" id="save_as_dialog">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Save As</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="action">save</property>
+    <property name="do_overwrite_confirmation">True</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="filechooserdialog-vbox2">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="filechooserdialog-action_area2">
+            <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
+            <property name="layout_style">start</property>
+            <child>
+              <object class="GtkButton" id="btn_save_as_cancel">
+                <property name="label" translatable="yes">Nevermind</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="save_as_cancelled" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_save_as_save">
+                <property name="label" translatable="yes">Store Within</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="save_as_save" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">America's The Best Country In The World</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkTextBuffer" id="textbuffer2">
     <property name="text" translatable="yes">This is some example text here.
 </property>
@@ -111,8 +178,8 @@
     <property name="title" translatable="yes">Danny's GTK+ Text Editor</property>
     <property name="modal">True</property>
     <property name="window_position">center</property>
-    <property name="default_width">400</property>
-    <property name="default_height">602</property>
+    <property name="default_width">2048</property>
+    <property name="default_height">720</property>
     <property name="destroy_with_parent">True</property>
     <property name="icon_name">accessories-text-editor</property>
     <property name="type_hint">dialog</property>
@@ -147,6 +214,24 @@
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <signal name="activate" handler="gtk_main_quit" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="gtk-open">
+                        <property name="label">gtk-open</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Open new text file</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="btn_open_clicked" swapped="no"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="gtk-save">
+                        <property name="label">gtk-save</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_stock">True</property>
                       </object>
                     </child>
                   </object>
@@ -286,7 +371,6 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="margin_left">11</property>
-                <property name="relief">none</property>
                 <signal name="clicked" handler="btn_open_clicked" swapped="no"/>
               </object>
               <packing>
@@ -308,6 +392,20 @@
                 <property name="fill">True</property>
                 <property name="padding">6</property>
                 <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_save_as">
+                <property name="label" translatable="yes">Save As</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="btn_save_as_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
