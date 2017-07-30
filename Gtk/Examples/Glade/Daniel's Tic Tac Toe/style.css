@@ -1,4 +1,4 @@
-GtkButton.button {
+.button {
   background:orange;
   border: 1px solid red;
   color: white;
@@ -6,24 +6,24 @@ GtkButton.button {
   font-size: medium;
 }
 
-GtkButton.light{
+.light{
   opacity: 0.3;
 }
 
-GtkButton.dark{
+.dark{
   opacity: 1.0;
 }
 
-GtkButton.button:active {
+.button:active {
   background-color: orange;
   border: 1px solid orange;
 }
 
-GtkBox.light_blue_bg{
+.light_blue_bg{
   background: #7FA4AA;
   color: black;
 }
-GtkBox.splash_bg{
+.splash_bg{
 	border-radius: 2px;
 	background: #7FA4AA;
 }
@@ -31,10 +31,10 @@ GtkBox.splash_bg{
 .window-frame {
 	border-radius: 7px 7px 0 0;
 }
-GtkWindow.splash_diag{
+.splash_diag{
 	border-radius: 2px;
 }
-GtkButton.winning_piece{
+.winning_piece{
 	border: 3px solid red;
 	background: red;
 	color: white;
