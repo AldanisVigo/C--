@@ -1,7 +1,7 @@
 /*
- * 	@author: Aldanis Vigo
- *  @date: July 29th 2017
- * 	Description: Daniel's Dinosaur Tic Tac Toe game.
+ *	@author: Aldanis Vigo
+ *	@date: July 29th 2017
+ *	Description: Daniel's Dinosaur Tic Tac Toe game.
 */
 
 #include <gtk/gtk.h>
